@@ -1,20 +1,25 @@
-import {makeObservable, observable, action, makeAutoObservable} from "mobx";
+import {action, makeAutoObservable, makeObservable, observable, runInAction} from "mobx";
+import axios from "axios";
+import {toJS} from 'mobx'
 
 class ShopStore {
 
 
     constructor() {
-        this.products = [
-            123,123,123
-        ]
+        this.products = [];
         makeObservable(this, {
             products: observable,
-            loadProducts: action
-        })
+            loadProducts: action,
+        });
     }
 
     loadProducts() {
-        console.log(this.products)
+        axios.get('mock-up/products.json').then(({data}) => {
+            runInAction(() => {
+                this.products = data
+            })
+            console.log(toJS(this.products))
+        });
     }
 
 }

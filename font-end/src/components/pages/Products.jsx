@@ -2,15 +2,19 @@ import React, {useEffect} from "react";
 import {observer} from "mobx-react-lite";
 import {useStore} from "../providers/RootStoreProvider";
 import ShopStore from "../../store/ShopStore";
-import { toJS } from 'mobx'
+import {toJS} from 'mobx'
 
 
 const Products = observer(() => {
-    const {rootStore} = useStore();
+    const {rootStore: {shopStore, userStore}} = useStore();
 
     useEffect(() => {
-        console.log(toJS(rootStore.shopStore.products));
-    }, [rootStore])
+        shopStore.loadProducts();
+    }, [])
+
+    // useEffect(() => {
+    //     console.log(toJS(shopStore.products));
+    // }, [shopStore.products])
 
     return (
         <div className="container">
@@ -49,12 +53,12 @@ const Products = observer(() => {
                                 className="btn-group d-flex justify-content-center align-items-lg-center gap-3 mt-3"
                                 role="group" aria-label="Basic example">
                                 <button type="button" className="btn btn-primary">
-                                    <i className="bi bi-dash"></i>
+                                    <i className="bi bi-dash"/>
                                 </button>
                                 <p className="m-0 p-0 text-center">1 шт</p>
                                 <button type="button" disabled=""
                                         className="btn btn-primary">
-                                    <i className="bi bi-plus"></i>
+                                    <i className="bi bi-plus"/>
                                 </button>
                             </div>
                         </div>
@@ -80,8 +84,6 @@ const Products = observer(() => {
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
     )
