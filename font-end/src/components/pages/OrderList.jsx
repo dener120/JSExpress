@@ -3,8 +3,9 @@ import React from "react";
 const OrderList = () => {
 
     return (
-        <div>
-            <div>
+        <div className="container p-3">
+            <h2>Заказы</h2>
+            <div className="p-3">
                 <div className="card-items">
                     <div className="card cart-item" style={{margin: '1rem'}}>
                         <div className="card-header d-flex justify-content-between">
