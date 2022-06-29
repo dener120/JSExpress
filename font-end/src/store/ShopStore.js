@@ -17,11 +17,9 @@ class ShopStore {
         axios.get('mock-up/products.json').then(({data}) => {
             runInAction(() => {
                 this.products = data
-            })
-            console.log(toJS(this.products))
+            });
         });
     }
-
 }
 
 export default ShopStore;
