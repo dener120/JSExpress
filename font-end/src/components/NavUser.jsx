@@ -4,7 +4,7 @@ const NavUser = () => {
 
 
     return (
-        <div className="">
+        <div>
             <h2>Меню</h2>
             <div className="row p-3 col-12 m-t-3">
                 <div  className="gap-3 align-items-center justify-content-center row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5">
