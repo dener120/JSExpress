@@ -13,14 +13,19 @@ const NavUser = () => {
                         <i className="bi bi-basket3 fs-2"/>
                     </a>
                     <button style={{width: "12rem"}, {height: "7rem"}} className="col user-nav-item btn btn-light">
-                        <span className="nav-item-title">Аналитики</span>
+                        <span className="nav-item-title">Создать товар</span>
                         <i className="bi bi-bag-plus fs-2"/>
                     </button>
                     <a style={{width: "12rem"}, {height: "7rem"}} className="col user-nav-item btn btn-light">
                         <span className="nav-item-title">Аналитики</span>
                         <i className="bi bi-bar-chart fs-2"/>
                     </a>
-                    <button style={{width: "12rem"}, {height: "7rem"}} className="col user-nav-item btn btn-light">
+                    <button
+                        style={{width: "12rem"}, {height: "7rem"}}
+                        className="col user-nav-item btn btn-light"
+                        data-bs-toggle="modal"
+                        data-bs-target="#bank-card-modal"
+                    >
                         <span className="nav-item-title">Пополнить счет</span>
                         <i className="bi bi-credit-card-2-back fs-2" />
                         <span className="nav-item-info">123123 ₽</span>

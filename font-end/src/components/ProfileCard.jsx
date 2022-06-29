@@ -5,17 +5,17 @@ const ProfileCard = () => {
 
 
     return (
-        <div class="mt-5">
+        <div className="mt-5">
             <h2>Пользователь</h2>
             <div className="container py-5 ">
                 <div className="row d-flex justify-content-start align-items-center">
-                    <div className="col col-md-7 col-lg-8 mb-4 mb-lg-0">
-                        <div className="card mb-3" style={{"border-radius": "0.5rem"}}>
+                    <div className="profile-card col col-md-7 col-lg-8 mb-4 mb-lg-0">
+                        <div className="card mb-3" style={{"borderRadius": "0.5rem"}}>
                             <div className="row g-0">
                                 <div className="col-md-4 gradient-custom text-center text-white"
                                      style={{
-                                         "border-top-left-radius": "0.5rem",
-                                         "border-bottom-left-radius": "0.5rem"
+                                         "borderTopLeftRadius": "0.5rem",
+                                         "borderBottomLeftRadius": "0.5rem"
                                      }}>
                                     <img
                                         src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
@@ -54,7 +54,7 @@ const ProfileCard = () => {
                                         <div className="d-flex justify-content-start">
                                             <button type="button" className="btn btn-danger">
                                                 Выход
-                                                <i style={{"margin-left": '5px'}} className="bi bi-box-arrow-in-right"/>
+                                                <i style={{"marginLeft": '5px'}} className="bi bi-box-arrow-in-right"/>
                                             </button>
                                         </div>
                                     </div>

@@ -6,6 +6,7 @@ import OrderList from "./components/pages/OrderList";
 import {useStore} from "./components/providers/RootStoreProvider";
 import {useEffect} from "react";
 import Modal from "./components/Modal";
+import DepositCash from "./components/Forms/DepositCash"
 import AuthReg from "./components/Forms/AuthReg";
 import UserPage from "./components/pages/UserPage"
 
@@ -31,6 +32,7 @@ function App() {
                 </Routes>
             </main>
             <Modal id={"auth-reg-modal"} child={AuthReg}/>
+            <Modal id={"bank-card-modal"} child={DepositCash}/>
         </>
     );
 }

@@ -33,7 +33,8 @@ const Nav = observer(() => {
                                 type="button"
                                 className="nav-link"
                                 data-bs-toggle="modal"
-                                data-bs-target="#auth-reg-modal">
+                                data-bs-target="#auth-reg-modal"
+                            >
                                 <i className="bi bi-door-open"/>
                                 Войти
                             </a>
