@@ -12,7 +12,12 @@ const NavUser = () => {
                         <span className="nav-item-title">Ваши товары</span>
                         <i className="bi bi-basket3 fs-2"/>
                     </a>
-                    <button style={{width: "12rem"}, {height: "7rem"}} className="col user-nav-item btn btn-light">
+                    <button
+                        style={{width: "12rem"}, {height: "7rem"}}
+                        className="col user-nav-item btn btn-light"
+                        data-bs-toggle="modal"
+                        data-bs-target="#create-product-modal"
+                    >
                         <span className="nav-item-title">Создать товар</span>
                         <i className="bi bi-bag-plus fs-2"/>
                     </button>

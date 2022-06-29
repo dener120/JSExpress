@@ -7,6 +7,7 @@ import {useStore} from "./components/providers/RootStoreProvider";
 import {useEffect} from "react";
 import Modal from "./components/Modal";
 import DepositCash from "./components/Forms/DepositCash"
+import AddProduct from "./components/Forms/AddProduct"
 import AuthReg from "./components/Forms/AuthReg";
 import UserPage from "./components/pages/UserPage"
 
@@ -31,8 +32,10 @@ function App() {
                     <Route exact path="/user" element={<UserPage/>}/>
                 </Routes>
             </main>
+
             <Modal id={"auth-reg-modal"} child={AuthReg}/>
             <Modal id={"bank-card-modal"} child={DepositCash}/>
+            <Modal id={"create-product-modal"} child={AddProduct}/>
         </>
     );
 }
