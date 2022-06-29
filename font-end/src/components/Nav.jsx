@@ -18,10 +18,10 @@ const Nav = () => {
                     </a>
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <Link class="nav-link" to="/">Главная</Link>
+                            <Link className="nav-link" to="/">Главная</Link>
                         </li>
                         <li className="nav-item">
-                            <Link class="nav-link" to="/orderlist">Мои заказы</Link>
+                            <Link className="nav-link" to="/orderlist">Мои заказы</Link>
                         </li>
                     </ul>
                     <ul className="navbar-nav d-flex">
@@ -34,7 +34,7 @@ const Nav = () => {
                         </li>
                         <li className="nav-item d-f" data-page="Корзина">
                             <div className="container-fluid d-flex align-items-center">
-                                <Link class="nav-link" to="cart">
+                                <Link className="nav-link" to="cart">
                                     {2}
                                     <i data-page="Корзина" className="bi bi-bag"/>
                                 </Link>

@@ -1,8 +1,16 @@
-import React from "react";
+import React, {useEffect} from "react";
+import {observer} from "mobx-react-lite";
+import {useStore} from "../providers/RootStoreProvider";
+import ShopStore from "../../store/ShopStore";
+import { toJS } from 'mobx'
 
 
-const Products = () => {
+const Products = observer(() => {
+    const {rootStore} = useStore();
 
+    useEffect(() => {
+        console.log(toJS(rootStore.shopStore.products));
+    }, [rootStore])
 
     return (
         <div className="container">
@@ -65,16 +73,18 @@ const Products = () => {
                             <div
                                 className="btn-group d-flex justify-content-center align-items-lg-center gap-3 mt-3"
                                 role="group" aria-label="Basic example">
-                                    <button type="button" className="btn btn-danger align-items-lg-center">
-                                        Удалить
-                                    </button>
+                                <button type="button" className="btn btn-danger align-items-lg-center">
+                                    Удалить
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
+
+
             </div>
         </div>
     )
-}
+})
 
 export default Products;
