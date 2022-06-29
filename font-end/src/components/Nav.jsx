@@ -38,16 +38,6 @@ const Nav = observer(() => {
                                 Войти
                             </a>
                         </li>
-                        <li className="nav-item">
-                            <a
-                                type="button"
-                                className="nav-link"
-                                data-bs-toggle="modal"
-                                data-bs-target="#add-prod-modal">
-                                <i className="bi bi-door-open"/>
-                                Добавить продукт
-                            </a>
-                        </li>
                         <li className="nav-item d-f" data-page="Корзина">
                             <div className="container-fluid d-flex align-items-center">
                                 <Link className="nav-link" to="cart">
