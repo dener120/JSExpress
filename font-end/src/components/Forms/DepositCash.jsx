@@ -4,12 +4,12 @@ import React from 'react';
 
 const DepositCash = () => {
   return (
-    <div className="card text-left border-0">
+    <div className="modal-card card text-left border-0">
       <div className="card border-0">
         <p className="h1 text-center color">Пополнить </p>
       </div>
       <div class="cc">
-        <h2>Bank of CodePen</h2>
+        <h2 color="card-title">Bank of CodePen</h2>
 
         <span class="provider mastercard">MasterCard</span>
         <span class="provider amex">American Express</span>

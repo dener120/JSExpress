@@ -38,11 +38,17 @@ const Nav = observer(() => {
                                 Войти
                             </a>
                         </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="user">
+                                Пльзователь
+                                <i className="bi bi-bag"/>
+                            </Link>
+                        </li>
                         <li className="nav-item d-f" data-page="Корзина">
                             <div className="container-fluid d-flex align-items-center">
                                 <Link className="nav-link" to="cart">
                                     {userStore.cart.length}
-                                    <i data-page="Корзина" className="bi bi-bag"/>
+                                    <i  className="bi bi-bag"/>
                                 </Link>
                             </div>
                         </li>

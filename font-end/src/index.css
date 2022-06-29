@@ -56,8 +56,39 @@ code {
   color: #495057;
 }
 
-@import url(https://fonts.googleapis.com/css?family=Anaheim);
-@import url(https://fonts.googleapis.com/css?family=Inconsolata);
+.user-nav-item {
+  box-shadow: 0 4px 16px 2px rgba(0, 26, 52, .16);
+  border-radius: 10px;
+  transition: border 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28) 100ms;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+}
+
+
+
+.user-nav-item:hover {
+  border: 0.1rem solid #0096ff;
+  box-shadow: inset 0 0px 4px 0px rgb(0 26 52 / 16%);
+}
+
+
+
+.user-nav-item .nav-item-title,
+.nav-item-info{
+  color:#001a34;
+  font-weight: 700;
+  line-height: 20px;
+  font-size: 16px
+}
+
+.nav-item-info {
+  color: #0096ff;
+}
+
+
 
 .cc {
   background: #174395;
@@ -94,7 +125,7 @@ code {
   transform: skew(80deg);
 }
 
-h2 {
+.card-title {
   font: 22px Anaheim;
   color: #fff;
   margin: 0 10px 10px 0;
@@ -102,7 +133,7 @@ h2 {
   text-align: right;
 }
 
-span {
+.modal-card span {
   text-transform: uppercase;
 }
 
@@ -135,7 +166,7 @@ span {
   background-position: 147px 0;
 }
 
-input {
+.modal-card input {
   background: #ececec;
   border: 0;
   border-radius: 4px;
@@ -151,7 +182,7 @@ input {
   position: relative;
   z-index: 10;
 }
-input:nth-child(4) {
+.modal-card input:nth-child(4) {
   margin-right: 0;
 }
 

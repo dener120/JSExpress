@@ -7,6 +7,7 @@ import {useStore} from "./components/providers/RootStoreProvider";
 import {useEffect} from "react";
 import Modal from "./components/Modal";
 import AuthReg from "./components/Forms/AuthReg";
+import UserPage from "./components/pages/UserPage"
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
                     <Route exact path="/" element={<Products/>}/>
                     <Route exact path="/cart" element={<Cart/>}/>
                     <Route exact path="/orderlist" element={<OrderList/>}/>
+                    <Route exact path="/user" element={<UserPage/>}/>
                 </Routes>
             </main>
             <Modal id={"auth-reg-modal"} child={AuthReg}/>
