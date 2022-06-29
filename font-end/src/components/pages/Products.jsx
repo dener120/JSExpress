@@ -9,7 +9,8 @@ const Products = observer(() => {
 
 
     return (
-        <div className="container">
+        <div className="container p-3">
+                <h2>Товары</h2>
             <ProductItems/>
         </div>
     )
