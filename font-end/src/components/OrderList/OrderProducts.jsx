@@ -7,3 +7,5 @@ const OrderProducts = () => {
     <OrderProduct/>
   </div>
 }
+
+export default OrderProducts;
