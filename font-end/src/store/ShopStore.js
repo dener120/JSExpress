@@ -1,4 +1,4 @@
-import {action, makeAutoObservable, makeObservable, observable, runInAction} from "mobx";
+import {action, makeObservable, observable, runInAction} from "mobx";
 import axios from "axios";
 import {toJS} from 'mobx'
 

@@ -1,6 +1,5 @@
 import UserStore from "./UserStore";
 import ShopStore from "./ShopStore";
-import {makeAutoObservable} from "mobx";
 
 class RootStore {
     constructor() {

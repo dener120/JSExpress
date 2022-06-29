@@ -1,7 +1,10 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import {useStore} from "./providers/RootStoreProvider";
+import {observer} from "mobx-react-lite";
 
-const Nav = () => {
+const Nav = observer(() => {
+    const {rootStore: {shopStore, userStore}} = useStore();
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -26,8 +29,11 @@ const Nav = () => {
                     </ul>
                     <ul className="navbar-nav d-flex">
                         <li className="nav-item">
-                            <a data-page="Войти" href="/" className={`nav-link`}
-                            >
+                            <a
+                                type="button"
+                                className="nav-link"
+                                data-bs-toggle="modal"
+                                data-bs-target="#auth-reg-modal">
                                 <i className="bi bi-door-open"/>
                                 Войти
                             </a>
@@ -35,7 +41,7 @@ const Nav = () => {
                         <li className="nav-item d-f" data-page="Корзина">
                             <div className="container-fluid d-flex align-items-center">
                                 <Link className="nav-link" to="cart">
-                                    {2}
+                                    {userStore.cart.length}
                                     <i data-page="Корзина" className="bi bi-bag"/>
                                 </Link>
                             </div>
@@ -45,6 +51,6 @@ const Nav = () => {
             </div>
         </nav>
     )
-}
+})
 
 export default Nav;
