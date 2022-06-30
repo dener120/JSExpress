@@ -1,6 +1,49 @@
-import React from "react";
+import React, {useState} from "react";
+
 
 const AuthReg = () => {
+    const [authForm, setAuthForm] = useState({
+        email: '',
+        password: '',
+        isValid: false,
+        error: '',
+    });
+
+    const handleChange = (e) => {
+        setAuthForm({...authForm, [e.target.name]: e.target.value})
+    }
+
+    const validAutForm = () => {
+        const passwordReg = new RegExp(/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/);
+        const emailReg = new RegExp(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+        let isValid = true;
+        let messages = [];
+
+        if (!passwordReg.test(authForm.password)) {
+            isValid = false
+            messages.push('Неверный пароль.')
+        }
+        if (!emailReg.test(authForm.email)) {
+            isValid = false
+            messages.push('Неверный email.')
+        }
+
+        if (!isValid) {
+            setAuthForm({...authForm, isValid: false, error: messages.join(' ')})
+        } else {
+            setAuthForm({...authForm, isValid: true, error: ''})
+        }
+
+        return isValid;
+    }
+
+    const handleSubmitAuth = (e) => {
+        e.preventDefault();
+        console.log(validAutForm());
+        if (!validAutForm()) return;
+        console.log('send')
+    }
+
 
     return (
         <div className="card text-center border-0">
@@ -8,12 +51,14 @@ const AuthReg = () => {
             <ul className="nav nav-tabs border-0 btn-group" id="auth-reg-tab" role="tablist">
                 <li className="nav-item col-12 col-sm-6" role="presentation">
                     <button className="nav-link col-12 active" id="home-tab" data-bs-toggle="tab" data-bs-target="#auth"
-                            type="button" role="tab" aria-controls="home" aria-selected="true">Авторизация
+                            type="button" role="tab" aria-controls="home" aria-selected="true">
+                        Авторизация
                     </button>
                 </li>
                 <li className="nav-item col-12 col-sm-6" role="presentation">
                     <button className="nav-link col-12" id="profile-tab" data-bs-toggle="tab" data-bs-target="#reg"
-                            type="button" role="tab" aria-controls="profile" aria-selected="false">Регистрация
+                            type="button" role="tab" aria-controls="profile" aria-selected="false">
+                        Регистрация
                     </button>
                 </li>
             </ul>
@@ -22,17 +67,48 @@ const AuthReg = () => {
 
                     <div className="tab-pane fade show active" id="auth" role="tabpanel" aria-labelledby="home-tab">
 
-                        <form id="auth-form">
+                        <form
+                            id="auth-form"
+                            onSubmit={(e) => e.preventDefault()}
+                        >
                             <div className="mb-3">
                                 <label htmlFor="exampleInputEmail1" className="form-label">Email адрес</label>
-                                <input type="email" className="form-control" id="email-auth"
-                                       aria-describedby="emailHelp"/>
+                                <input
+                                    type="text"
+                                    name="email"
+                                    className="form-control"
+                                    id="email-auth"
+                                    value={authForm.email}
+                                    onChange={(e) => handleChange(e)}
+                                />
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="exampleInputPassword1" className="form-label">Пароль</label>
-                                <input type="password" className="form-control" id="password-auth"/>
+                                <input
+                                    type="password"
+                                    name="password"
+                                    className="form-control"
+                                    id="password-auth"
+                                    value={authForm.password}
+                                    onChange={(e) => handleChange(e)}
+                                />
                             </div>
-                            <button type="submit" className="btn btn-success">Авторизоваться</button>
+                            <button
+                                type="button"
+                                onClick={(e) => handleSubmitAuth(e)}
+                                className="btn btn-success"
+                            >
+                                Авторизоваться
+                            </button>
+                            {
+                                authForm.error.length > 0
+                                    ?
+                                    <div className="mt-3 form-error form-text danger">
+                                        {authForm.error}
+                                    </div>
+                                    :
+                                    ""
+                            }
                         </form>
 
                     </div>
@@ -69,7 +145,7 @@ const AuthReg = () => {
                 </div>
             </div>
         </div>
-)
+    )
 }
 
 export default AuthReg;

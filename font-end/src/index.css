@@ -205,3 +205,7 @@ code {
   font: 12px Anaheim, sans-serif;
   color: #ace4fa;
 }
+
+.form-error {
+  color: #dc3545;
+}
