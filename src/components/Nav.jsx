@@ -10,16 +10,14 @@ const Nav = observer(() => {
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container-fluid">
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+                        data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                         aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"/>
                 </button>
-                <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-                    <a  data-page="Главная" className="ml-5 navbar-brand" href="/">
-                        {/*<img src={'images/shopee-logo-40482.png'} alt="" width="30" height="24"*/}
-                        {/*     className=" d-inline-block align-text-center"/>*/}
+                <div className="collapse navbar-collapse" id="navbarNavDropdown">
+                    <Link className="className="ml-5 navbar-brand to="/">
                         <i className=" bi bi-shop text-info  fs-1"/>
-                    </a>
+                    </Link>
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
                             <Link className="nav-link" to="/">Главная</Link>

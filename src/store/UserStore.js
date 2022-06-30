@@ -35,13 +35,16 @@ class UserStore {
     }
 
     registration(email, password, fullname) {
-        console.log(email, password)
+        const [name, surname, patronymic] = fullname.split(' ');
         return axios({
             method: 'post',
-            url: BASE + 'auth/registration',
+            url: BASE + 'users',
             data: {
                 email: email,
-                password: password
+                password: password,
+                name: fullname[0],
+                surname: fullname[1],
+                patronymic: fullname[3],
             }
         }).then((res) => {
             return runInAction(() => {
@@ -76,7 +79,7 @@ class UserStore {
                 this.user.id = decodeToke.id;
                 this.user.currency = decodeToke.currency;
                 this.user.email = decodeToke.email;
-                this.user.roles = decodeToke.roles.map(role => role.description)
+                this.user.roles = decodeToke.roles.map(role => role.description);
                 localStorage.setItem('user', JSON.stringify({
                     id: decodeToke.id,
                     currency: decodeToke.currency,
@@ -148,7 +151,7 @@ class UserStore {
             },
         }).then((res) => {
             return runInAction(() => {
-                console.log(res)
+                console.log(res);
                 return (res.status);
             });
         });

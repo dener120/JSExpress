@@ -58,11 +58,18 @@ const AuthReg = () => {
         const passwordReg = new RegExp(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/);
         const emailReg = new RegExp(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
         const addressReg = new RegExp(/^[а-яA-Я0-9\s.,]+/);
+        const fullNameReg = new RegExp(/^[А-ЯЁ][а-яё]{2,}([-][А-ЯЁ][а-яё]{2,})?\s[А-ЯЁ][а-яё]{2,}\s[А-ЯЁ][а-яё]{2,}$/)
 
         let isValid = true;
         let messages = [];
 
+        if (!fullNameReg.test(regForm.fullname)) {
+            isValid = false
+            messages.push('Некорректное ФИО')
+        }
+
         if (!addressReg.test(regForm.address)) {
+            isValid = false
             messages.push('Некорректный адрес')
         }
 
@@ -75,6 +82,7 @@ const AuthReg = () => {
             messages.push('Неверный email.')
         }
         if (regForm.password !== regForm["second-password"]) {
+            isValid = false
             messages.push('Пароли не совпадают.')
         }
 
@@ -111,7 +119,7 @@ const AuthReg = () => {
     const handleSubmitReg = (e) => {
         e.preventDefault();
         if (!validRegForm()) return;
-        userStore.registration(regForm.email, regForm.password)
+        userStore.registration(regForm.email, regForm.password, regForm.fullname)
             .then(code => {
                 if (code === 201) {
                     setRegForm({

@@ -14,10 +14,11 @@ class ShopStore {
     }
 
     loadProducts() {
-        axios.defaults.headers.get['Access-Control-Allow-Origin'] = '*';
-        axios.get(BASE+'products').then(({data}) => {
-            runInAction(() => {
-                this.products = data
+       return axios.get(BASE+'products').then(({data}) => {
+           return runInAction(() => {
+               console.log(data)
+               this.products = data
+               return true;
             });
         });
     }

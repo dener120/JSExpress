@@ -221,3 +221,11 @@ code {
 .nav-link i {
   margin: 0 10px;
 }
+
+.spinner-container{
+  width: 80%;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
