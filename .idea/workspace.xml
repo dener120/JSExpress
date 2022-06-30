@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b1df7080-4ad0-46b6-9003-3fc2b122a5db" name="Changes" comment="add github pages" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="backend" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SWAP_SIDES_IN_COMPARE_BRANCHES" value="true" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="2BFGWNLH0B5mmUCaCmftwyNAV7V" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.3.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\study\web\JSExpressGreenAtom" />
+      <recent name="D:\study\web\JSExpressGreenAtom\font-end\public\images" />
+      <recent name="D:\study\web\JSExpressGreenAtom\font-end\public\mock-up" />
+      <recent name="D:\study\web\JSExpressGreenAtom\font-end\src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\study\web\JSExpressGreenAtom\font-end\src" />
+      <recent name="D:\study\web\JSExpressGreenAtom\font-end\src\components\Forms" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.deploy">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="deploy" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/font-end/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="deploy" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start:dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start:dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.deploy" />
+        <item itemvalue="npm.start:dev" />
+        <item itemvalue="npm.build" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b1df7080-4ad0-46b6-9003-3fc2b122a5db" name="Changes" comment="" />
+      <created>1656494457784</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1656494457784</updated>
+      <workItem from="1656494459128" duration="22764000" />
+      <workItem from="1656522809736" duration="15477000" />
+      <workItem from="1656567510392" duration="10100000" />
+      <workItem from="1656577736234" duration="5600000" />
+      <workItem from="1656584987697" duration="17751000" />
+      <workItem from="1656606516529" duration="2249000" />
+    </task>
+    <task id="LOCAL-00001" summary="Installing react">
+      <created>1656501348562</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1656501348563</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add pages: orderList, Products, Cart. Add component Nav. Create Project routes">
+      <created>1656501743077</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1656501743077</updated>
+    </task>
+    <task id="LOCAL-00003" summary="create Mobx Store. create RootStore, ShopStore, UserStore. Create StoreProvider">
+      <created>1656511142413</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1656511142413</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add Axios">
+      <created>1656513073879</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1656513073879</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add Axios">
+      <created>1656513416216</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1656513416216</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add LoadProducts in ShopStore">
+      <created>1656513478910</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1656513478910</updated>
+    </task>
+    <task id="LOCAL-00007" summary="create render products">
+      <created>1656514594117</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1656514594117</updated>
+    </task>
+    <task id="LOCAL-00008" summary="create Modal component and Auth-Reg component">
+      <created>1656517461025</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1656517461025</updated>
+    </task>
+    <task id="LOCAL-00009" summary="add form Auth">
+      <created>1656518482540</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1656518482540</updated>
+    </task>
+    <task id="LOCAL-00010" summary="add form Reg">
+      <created>1656521795105</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1656521795106</updated>
+    </task>
+    <task id="LOCAL-00011" summary="commit changes nav">
+      <created>1656521945139</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1656521945139</updated>
+    </task>
+    <task id="LOCAL-00012" summary="commit changes nav">
+      <created>1656522050335</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1656522050335</updated>
+    </task>
+    <task id="LOCAL-00013" summary="add UserNav and User profile card">
+      <created>1656532350304</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1656532350304</updated>
+    </task>
+    <task id="LOCAL-00014" summary="create component ProfileCard">
+      <created>1656535566165</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1656535566165</updated>
+    </task>
+    <task id="LOCAL-00015" summary="update design DepositCash">
+      <created>1656537910433</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1656537910433</updated>
+    </task>
+    <task id="LOCAL-00016" summary="add title for orderList">
+      <created>1656538281289</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1656538281289</updated>
+    </task>
+    <task id="LOCAL-00017" summary="connected create product modal">
+      <created>1656538636263</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1656538636263</updated>
+    </task>
+    <task id="LOCAL-00018" summary="added fields in form registration">
+      <created>1656539478611</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1656539478611</updated>
+    </task>
+    <task id="LOCAL-00019" summary="add validation auth form">
+      <created>1656575423538</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1656575423538</updated>
+    </task>
+    <task id="LOCAL-00020" summary="add registration form  state inputs">
+      <created>1656575791880</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1656575791880</updated>
+    </task>
+    <task id="LOCAL-00021" summary="add validation form reg">
+      <created>1656577588914</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1656577588914</updated>
+    </task>
+    <task id="LOCAL-00022" summary="connection server api: loadAllProducts, auth, logout">
+      <created>1656587569595</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1656587569595</updated>
+    </task>
+    <task id="LOCAL-00023" summary="connection server api:auth, logout">
+      <created>1656595716817</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1656595716817</updated>
+    </task>
+    <task id="LOCAL-00024" summary="create logical DepositCash, AddProduct, ProfileCard">
+      <created>1656605138098</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1656605138098</updated>
+    </task>
+    <task id="LOCAL-00025" summary="add github pages">
+      <created>1656608109911</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1656608109911</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Installing react" />
+    <MESSAGE value="add pages: orderList, Products, Cart. Add component Nav. Create Project routes" />
+    <MESSAGE value="create Mobx Store. create RootStore, ShopStore, UserStore. Create StoreProvider" />
+    <MESSAGE value="add Axios" />
+    <MESSAGE value="add LoadProducts in ShopStore" />
+    <MESSAGE value="create render products" />
+    <MESSAGE value="create Modal component and Auth-Reg component" />
+    <MESSAGE value="add form Auth" />
+    <MESSAGE value="add form Reg" />
+    <MESSAGE value="commit changes nav" />
+    <MESSAGE value="add UserNav and User profile card" />
+    <MESSAGE value="create component ProfileCard" />
+    <MESSAGE value="update design DepositCash" />
+    <MESSAGE value="add title for orderList" />
+    <MESSAGE value="connected create product modal" />
+    <MESSAGE value="added fields in form registration" />
+    <MESSAGE value="add validation auth form" />
+    <MESSAGE value="add registration form  state inputs" />
+    <MESSAGE value="add validation form reg" />
+    <MESSAGE value="connection server api: loadAllProducts, auth, logout" />
+    <MESSAGE value="connection server api:auth, logout" />
+    <MESSAGE value="create logical DepositCash, AddProduct, ProfileCard" />
+    <MESSAGE value="add github pages" />
+    <option name="LAST_COMMIT_MESSAGE" value="add github pages" />
+  </component>
+</project>
