@@ -6,18 +6,18 @@ import BASE from '../config'
 
 class UserStore {
     constructor() {
+        this.user = {
+            id: JSON.parse(localStorage.getItem('user'))?.id,
+            email:  '' || JSON.parse(localStorage.getItem('user'))?.email,
+            currency: 0  || JSON.parse(localStorage.getItem('user'))?.currency
+        }
         this.cart = [];
-        this.email = '';
-        this.id = Number(localStorage.getItem('id'));
-        this.currency = '';
         this.order = [];
         this.createdProducts = [];
         makeObservable(this, {
+            user: observable,
             cart: observable,
             order: observable,
-            email: observable,
-            id: observable,
-            currency: observable,
             createdProducts: observable,
             auth: action,
             logAuth: action,
@@ -25,32 +25,63 @@ class UserStore {
             removeCart: action,
             changeCart: action,
             loadCart: action,
-            loadOrder: action
+            loadOrder: action,
+            registration: action
+        })
+    }
+
+    registration(email, password, fullname) {
+        console.log(email, password)
+        return  axios({
+            method: 'post',
+            url: BASE + 'auth/registration',
+            data: {
+                email: email,
+                password: password
+            }
+        }).then((res) => {
+            return runInAction(() => {
+                const decodeToke = jwt_decode(res.data.token);
+                this.user.id = decodeToke.id;
+                this.user.currency = decodeToke.currency;
+                this.user.email = decodeToke.email;
+                localStorage.setItem('user', JSON.stringify({
+                    id: decodeToke.id,
+                    currency: decodeToke.currency,
+                    email: decodeToke.email,
+                }));
+                return (res.status);
+            });
         })
     }
 
     auth(email, password) {
-        axios({
+        return  axios({
             method: 'post',
             url: BASE + 'auth/login',
             data: {
                 email: email,
                 password: password
             }
-        }).then(({data: {token}}) => {
-            runInAction(() => {
-                const decodeToke = jwt_decode(token);
-                this.currency = decodeToke.currency;
-                this.id = decodeToke.id;
-                this.email = decodeToke.email;
-                localStorage.setItem('id', this.id);
+        }).then((res) => {
+           return runInAction(() => {
+                const decodeToke = jwt_decode(res.data.token);
+                this.user.id = decodeToke.id;
+                this.user.currency = decodeToke.currency;
+                this.user.email = decodeToke.email;
+                localStorage.setItem('user', JSON.stringify({
+                    id: decodeToke.id,
+                    currency: decodeToke.currency,
+                    email: decodeToke.email,
+                }));
+                return (res.status);
             });
         })
     }
 
     logAuth() {
-        localStorage.removeItem('id');
-        this.id = null;
+        localStorage.removeItem('user');
+        this.user.id = null;
     }
 
     loadCart() {

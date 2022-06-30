@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import {useStore} from "../providers/RootStoreProvider";
+import {Modal} from "bootstrap";
 
 
 const AuthReg = () => {
@@ -10,6 +11,7 @@ const AuthReg = () => {
         password: 'qwerty1234',
         isValid: false,
         error: '',
+        success: '',
     });
     const [regForm, setRegForm] = useState({
         fullname: '',
@@ -19,6 +21,7 @@ const AuthReg = () => {
         address: '',
         isValid: false,
         error: '',
+        success: '',
     })
 
     const handleChangeAuth = (e) => {
@@ -53,14 +56,14 @@ const AuthReg = () => {
     }
 
     const validRegForm = () => {
-        const passwordReg = new RegExp(/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/);
+        const passwordReg = new RegExp(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/);
         const emailReg = new RegExp(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
         const addressReg = new RegExp(/^[а-яA-Я0-9\s.,]+/);
 
         let isValid = true;
         let messages = [];
 
-        if(!addressReg.test(regForm.address)) {
+        if (!addressReg.test(regForm.address)) {
             messages.push('Некорректный адрес')
         }
 
@@ -89,14 +92,44 @@ const AuthReg = () => {
     const handleSubmitAuth = (e) => {
         e.preventDefault();
         if (!validAutForm()) return;
-        userStore.auth(authForm.email, authForm.password);
+        userStore.auth(authForm.email, authForm.password)
+            .then(code => {
+                if (code === 201) {
+                   setAuthForm({
+                       ...authForm,
+                       email: '',
+                       password: '',
+                       success: 'Вы авторизовались. Закройте окно'
+                   })
+                    console.log(authForm)
+                    setTimeout(() => {
+                        setAuthForm({...authForm,success: ''})
+                    },10000)
+                }
+            });
     }
 
     const handleSubmitReg = (e) => {
         e.preventDefault();
         if (!validRegForm()) return;
+        userStore.registration(regForm.email, regForm.password)
+            .then(code => {
+                if (code === 201) {
+                    setRegForm({
+                        ...regForm,
+                        fullname: '',
+                        email: '',
+                        password: '',
+                        "second-password": '',
+                        address: '',
+                        success: 'Вы авторизовались. Закройте окно'
+                    })
+                    setTimeout(() => {
+                        setRegForm({...regForm,success: ''})
+                    },10000)
+                }
+            });
     }
-
 
     return (
         <div className="card text-center border-0">
@@ -158,6 +191,15 @@ const AuthReg = () => {
                                     ?
                                     <div className="mt-3 form-error form-text danger">
                                         {authForm.error}
+                                    </div>
+                                    :
+                                    ""
+                            }
+                            {
+                                authForm.success.length > 0
+                                    ?
+                                    <div className="mt-3 form-success form-text danger">
+                                        {authForm.success}
                                     </div>
                                     :
                                     ""
@@ -241,8 +283,16 @@ const AuthReg = () => {
                                 :
                                 ""
                         }
+                        {
+                            regForm.success.length > 0
+                                ?
+                                <div className="mt-3 form-success form-text danger">
+                                    {regForm.success}
+                                </div>
+                                :
+                                ""
+                        }
                     </div>
-
                 </div>
             </div>
         </div>

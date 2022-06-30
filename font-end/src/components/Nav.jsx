@@ -28,9 +28,11 @@ const Nav = observer(() => {
                         </li>
                     </ul>
                     <ul className="navbar-nav d-flex">
+                        {console.log(userStore.user.id)}
                         <li className="nav-item">
                             {
-                                !userStore.id
+
+                                !userStore.user.id
                                     ?
                                     <a
                                         type="button"

@@ -1,9 +1,11 @@
 import React from "react";
 import {useStore} from "./providers/RootStoreProvider";
+import {useNavigate} from "react-router-dom";
 
 
 const ProfileCard = () => {
     const {rootStore: {shopStore, userStore}} = useStore();
+    const navigate = useNavigate();
 
     return (
         <div className="mt-5">
@@ -56,7 +58,10 @@ const ProfileCard = () => {
                                             <button
                                                 type="button"
                                                 className="btn btn-danger"
-                                                onClick={(e) => userStore.logAuth()}
+                                                onClick={(e) => {
+                                                    userStore.logAuth();
+                                                    navigate('/');
+                                                }}
                                             >
                                                 Выход
                                                 <i style={{"marginLeft": '5px'}} className="bi bi-box-arrow-in-right"/>
