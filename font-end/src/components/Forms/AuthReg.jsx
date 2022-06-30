@@ -9,6 +9,14 @@ const AuthReg = () => {
         error: '',
     });
 
+    const [regForm, setRegForm] = useState({
+        fullname: '',
+        email: '',
+        password: '',
+        "second-password": '',
+        address: ''
+    })
+
     const handleChange = (e) => {
         setAuthForm({...authForm, [e.target.name]: e.target.value})
     }
@@ -117,24 +125,57 @@ const AuthReg = () => {
                         <form id="reg-form">
                             <div className="mb-3">
                                 <label htmlFor="full-name" className="form-label">ФИО</label>
-                                <input type="text" className="form-control" id="full-name"/>
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    id="full-name"
+                                    name="fullname"
+                                    value={regForm.fullname}
+                                    onChange={(e) => handleChange(e)}
+                                />
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="email-reg" className="form-label">Email адрес</label>
-                                <input type="email" className="form-control" id="email-reg"
-                                       aria-describedby="emailHelp"/>
+                                <input type="email"
+                                       className="form-control"
+                                       id="email-reg"
+                                       aria-describedby="emailHelp"
+                                       name="email"
+                                       value={regForm.email}
+                                       onChange={(e) => handleChange(e)}
+                                />
                             </div>
                             <div className="mb-3">
-                                <label htmlFor="first-passwor" className="form-label">Пароль</label>
-                                <input type="password" className="form-control" id="first-passwor"/>
+                                <label htmlFor="first-password" className="form-label">Пароль</label>
+                                <input
+                                    type="password"
+                                    className="form-control"
+                                    id="first-password"
+                                    name="password"
+                                    value={regForm.password}
+                                    onChange={(e) => handleChange(e)}
+                                />
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="second-password" className="form-label">Пароль подтверждение</label>
-                                <input type="password" className="form-control" id="second-password"/>
+                                <input type="password"
+                                       className="form-control"
+                                       id="second-password"
+                                       name="second-password"
+                                       value={regForm["second-password"]}
+                                       onChange={(e) => handleChange(e)}
+                                />
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="address" className="form-label">Адрес</label>
-                                <input type="text" className="form-control" id="address"/>
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    id="address"
+                                    name="address"
+                                    value={regForm.address}
+                                    onChange={(e) => handleChange(e)}
+                                />
                             </div>
 
                             <button type="submit" className="btn btn-success">Регистрация</button>
