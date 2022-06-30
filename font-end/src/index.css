@@ -213,3 +213,11 @@ code {
 .form-success{
   color:#198754;
 }
+
+.navbar-brand {
+  margin-left: 1rem;
+}
+
+.nav-link i {
+  margin: 0 10px;
+}

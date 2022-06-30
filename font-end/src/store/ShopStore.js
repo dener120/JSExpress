@@ -5,8 +5,6 @@ import BASE from '../config'
 
 
 class ShopStore {
-
-
     constructor() {
         this.products = [];
         makeObservable(this, {
@@ -19,7 +17,6 @@ class ShopStore {
         axios.defaults.headers.get['Access-Control-Allow-Origin'] = '*';
         axios.get(BASE+'products').then(({data}) => {
             runInAction(() => {
-                console.log(data)
                 this.products = data
             });
         });

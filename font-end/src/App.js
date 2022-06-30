@@ -13,11 +13,6 @@ import UserPage from "./components/pages/UserPage"
 
 
 function App() {
-    const {rootStore: {shopStore, userStore}} = useStore();
-
-    useEffect(() => {
-        shopStore.loadProducts();
-    }, [])
 
     return (
         <>

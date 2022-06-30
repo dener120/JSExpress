@@ -6,7 +6,11 @@ import {toJS} from 'mobx'
 import ProductItems from "../Products/ProductItems";
 
 const Products = observer(() => {
+    const {rootStore: {shopStore, userStore}} = useStore();
 
+    useEffect(() => {
+        shopStore.loadProducts();
+    }, [])
 
     return (
         <div className="container p-3">

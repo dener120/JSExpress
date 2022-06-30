@@ -13,8 +13,6 @@ const ProductItem = observer((props) => {
         quantity
     } = props;
 
-    console.log(props)
-
     return (
         <div className="card product p-2 m-3 d-flex flex-column justify-content-between"
              style={{width: '18rem'}}>
@@ -30,7 +28,7 @@ const ProductItem = observer((props) => {
                         className="btn-group d-flex justify-content-center align-items-lg-center gap-3 mt-3"
                         role="group" aria-label="Basic example">
                         {
-                            quantity <- 0
+                            quantity <= 0
                                 ?
                                 <button disabled="true" className="btn btn-secondary">
                                     Нет в наличии

@@ -15,9 +15,10 @@ const Nav = observer(() => {
                     <span className="navbar-toggler-icon"/>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-                    <a  data-page="Главная" className="navbar-brand" href="/">
-                        <img src="https://fakeimg.pl/250x100/" alt="" width="30" height="24"
-                             className=" d-inline-block align-text-center"/>
+                    <a  data-page="Главная" className="ml-5 navbar-brand" href="/">
+                        {/*<img src={'images/shopee-logo-40482.png'} alt="" width="30" height="24"*/}
+                        {/*     className=" d-inline-block align-text-center"/>*/}
+                        <i className=" bi bi-shop text-info  fs-1"/>
                     </a>
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
@@ -28,10 +29,8 @@ const Nav = observer(() => {
                         </li>
                     </ul>
                     <ul className="navbar-nav d-flex">
-                        {console.log(userStore.user.id)}
                         <li className="nav-item">
                             {
-
                                 !userStore.user.id
                                     ?
                                     <a

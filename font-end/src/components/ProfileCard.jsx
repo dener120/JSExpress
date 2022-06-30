@@ -1,9 +1,11 @@
 import React from "react";
 import {useStore} from "./providers/RootStoreProvider";
 import {useNavigate} from "react-router-dom";
+import {observer} from "mobx-react-lite";
+import {toJS} from "mobx";
 
 
-const ProfileCard = () => {
+const ProfileCard = observer(() => {
     const {rootStore: {shopStore, userStore}} = useStore();
     const navigate = useNavigate();
 
@@ -30,29 +32,28 @@ const ProfileCard = () => {
                                 </div>
                                 <div className="col-md-8">
                                     <div className="card-body p-4">
-                                        <h6>Information</h6>
+                                        <h6>Информация</h6>
                                         <hr className="mt-0 mb-4"/>
                                         <div className="row pt-1">
                                             <div className="col-6 mb-3">
                                                 <h6>Email</h6>
-                                                <p className="text-muted">info@example.com</p>
+                                                <p className="text-muted">{userStore.user.email}</p>
                                             </div>
                                             <div className="col-6 mb-3">
                                                 <h6>Phone</h6>
                                                 <p className="text-muted">123 456 789</p>
                                             </div>
                                         </div>
-                                        <h6>Projects</h6>
+                                        <h6>Роли</h6>
                                         <hr className="mt-0 mb-4"/>
                                         <div className="row pt-1">
-                                            <div className="col-6 mb-3">
-                                                <h6>Recent</h6>
-                                                <p className="text-muted">Lorem ipsum</p>
-                                            </div>
-                                            <div className="col-6 mb-3">
-                                                <h6>Most Viewed</h6>
-                                                <p className="text-muted">Dolor sit amet</p>
-                                            </div>
+                                            {console.log(toJS(userStore.user.roles))}
+                                            {toJS(userStore.user.roles).map((role, i) => (
+                                                <div key={i} className="col-6 mb-3">
+                                                    <h6>{role}</h6>
+                                                    {/*<p className="text-muted">Lorem ipsum</p>*/}
+                                                </div>
+                                            ))}
                                         </div>
                                         <div className="d-flex justify-content-start">
                                             <button
@@ -76,6 +77,6 @@ const ProfileCard = () => {
             </div>
         </div>
     )
-}
+})
 
 export default ProfileCard;
