@@ -14,11 +14,16 @@ const AuthReg = () => {
         email: '',
         password: '',
         "second-password": '',
-        address: ''
+        address: '',
+        isValid: false,
+        error: '',
     })
 
-    const handleChange = (e) => {
+    const handleChangeAuth = (e) => {
         setAuthForm({...authForm, [e.target.name]: e.target.value})
+    }
+    const handleChangeReg = (e) => {
+        setRegForm({...regForm, [e.target.name]: e.target.value})
     }
 
     const validAutForm = () => {
@@ -45,11 +50,54 @@ const AuthReg = () => {
         return isValid;
     }
 
+    const validRegForm = () => {
+        const passwordReg = new RegExp(/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/);
+        const emailReg = new RegExp(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+        const addressReg = new RegExp(/^[а-яA-Я0-9\s.,]+/);
+
+        let isValid = true;
+        let messages = [];
+
+        if(!addressReg.test(regForm.address)) {
+            messages.push('Некорректный адрес')
+        }
+
+        if (!passwordReg.test(regForm.password)) {
+            isValid = false
+            messages.push('Неверный пароль.')
+        }
+        if (!emailReg.test(regForm.email)) {
+            isValid = false
+            messages.push('Неверный email.')
+        }
+        if (regForm.password !== regForm["second-password"]) {
+            messages.push('Пароли не совпадают.')
+        }
+
+
+        if (!isValid) {
+            setRegForm({...regForm, isValid: false, error: messages.join(' ')})
+        } else {
+            setRegForm({...regForm, isValid: true, error: ''})
+        }
+
+        return isValid;
+    }
+
     const handleSubmitAuth = (e) => {
         e.preventDefault();
         console.log(validAutForm());
         if (!validAutForm()) return;
         console.log('send')
+    }
+
+    const handleSubmitReg = (e) => {
+        e.preventDefault();
+        console.log(validRegForm());
+        console.log(regForm)
+        if (!validRegForm()) return;
+        console.log('send')
+
     }
 
 
@@ -87,7 +135,7 @@ const AuthReg = () => {
                                     className="form-control"
                                     id="email-auth"
                                     value={authForm.email}
-                                    onChange={(e) => handleChange(e)}
+                                    onChange={(e) => handleChangeAuth(e)}
                                 />
                             </div>
                             <div className="mb-3">
@@ -98,7 +146,7 @@ const AuthReg = () => {
                                     className="form-control"
                                     id="password-auth"
                                     value={authForm.password}
-                                    onChange={(e) => handleChange(e)}
+                                    onChange={(e) => handleChangeAuth(e)}
                                 />
                             </div>
                             <button
@@ -122,7 +170,7 @@ const AuthReg = () => {
                     </div>
 
                     <div className="tab-pane fade" id="reg" role="tabpanel" aria-labelledby="contact-tab">
-                        <form id="reg-form">
+                        <form id="reg-form" onSubmit={(e) => e.preventDefault()}>
                             <div className="mb-3">
                                 <label htmlFor="full-name" className="form-label">ФИО</label>
                                 <input
@@ -131,7 +179,7 @@ const AuthReg = () => {
                                     id="full-name"
                                     name="fullname"
                                     value={regForm.fullname}
-                                    onChange={(e) => handleChange(e)}
+                                    onChange={(e) => handleChangeReg(e)}
                                 />
                             </div>
                             <div className="mb-3">
@@ -142,7 +190,7 @@ const AuthReg = () => {
                                        aria-describedby="emailHelp"
                                        name="email"
                                        value={regForm.email}
-                                       onChange={(e) => handleChange(e)}
+                                       onChange={(e) => handleChangeReg(e)}
                                 />
                             </div>
                             <div className="mb-3">
@@ -153,7 +201,7 @@ const AuthReg = () => {
                                     id="first-password"
                                     name="password"
                                     value={regForm.password}
-                                    onChange={(e) => handleChange(e)}
+                                    onChange={(e) => handleChangeReg(e)}
                                 />
                             </div>
                             <div className="mb-3">
@@ -163,7 +211,7 @@ const AuthReg = () => {
                                        id="second-password"
                                        name="second-password"
                                        value={regForm["second-password"]}
-                                       onChange={(e) => handleChange(e)}
+                                       onChange={(e) => handleChangeReg(e)}
                                 />
                             </div>
                             <div className="mb-3">
@@ -174,13 +222,28 @@ const AuthReg = () => {
                                     id="address"
                                     name="address"
                                     value={regForm.address}
-                                    onChange={(e) => handleChange(e)}
+                                    onChange={(e) => handleChangeReg(e)}
                                 />
                             </div>
 
-                            <button type="submit" className="btn btn-success">Регистрация</button>
-                        </form>
+                            <button
+                                type="button"
 
+                                className="btn btn-success"
+                                onClick={(e) => handleSubmitReg(e)}
+                            >
+                                Регистрация
+                            </button>
+                        </form>
+                        {
+                            regForm.error.length > 0
+                                ?
+                                <div className="mt-3 form-error form-text danger">
+                                    {regForm.error}
+                                </div>
+                                :
+                                ""
+                        }
                     </div>
 
                 </div>
