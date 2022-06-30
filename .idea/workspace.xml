@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1df7080-4ad0-46b6-9003-3fc2b122a5db" name="Changes" comment="add github pages" />
+    <list default="true" id="b1df7080-4ad0-46b6-9003-3fc2b122a5db" name="Changes" comment="moving a project up the directory">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,12 +67,22 @@
       <recent name="D:\study\web\JSExpressGreenAtom\font-end\src\components\Forms" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.deploy">
+  <component name="RunManager" selected="npm.deploy (1)">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
         <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="deploy (1)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="deploy" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -98,6 +110,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.deploy (1)" />
         <item itemvalue="npm.deploy" />
         <item itemvalue="npm.start:dev" />
         <item itemvalue="npm.build" />
@@ -118,6 +131,7 @@
       <workItem from="1656577736234" duration="5600000" />
       <workItem from="1656584987697" duration="17751000" />
       <workItem from="1656606516529" duration="2249000" />
+      <workItem from="1656608799777" duration="374000" />
     </task>
     <task id="LOCAL-00001" summary="Installing react">
       <created>1656501348562</created>
@@ -294,7 +308,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656608109911</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="moving a project up the directory">
+      <created>1656608848410</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1656608848410</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -336,6 +357,7 @@
     <MESSAGE value="connection server api:auth, logout" />
     <MESSAGE value="create logical DepositCash, AddProduct, ProfileCard" />
     <MESSAGE value="add github pages" />
-    <option name="LAST_COMMIT_MESSAGE" value="add github pages" />
+    <MESSAGE value="moving a project up the directory" />
+    <option name="LAST_COMMIT_MESSAGE" value="moving a project up the directory" />
   </component>
 </project>
