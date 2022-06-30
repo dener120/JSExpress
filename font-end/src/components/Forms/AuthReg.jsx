@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import {useStore} from "../providers/RootStoreProvider";
-import {Modal} from "bootstrap";
 
 
 const AuthReg = () => {

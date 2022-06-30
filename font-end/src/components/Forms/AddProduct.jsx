@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import {useStore} from "../providers/RootStoreProvider";
-import {logDOM} from "@testing-library/react";
 
 // id: 'add-prod-modal'
 
