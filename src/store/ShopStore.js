@@ -1,8 +1,6 @@
 import {action, makeObservable, observable, runInAction} from "mobx";
 import axios from "axios";
-import {toJS} from 'mobx'
 import BASE from '../config'
-
 
 class ShopStore {
     constructor() {

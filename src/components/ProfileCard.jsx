@@ -25,10 +25,7 @@ const ProfileCard = observer(() => {
                                     <img
                                         src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
                                         alt="Avatar" className="img-fluid my-5" style={{width: "80px"}}/>
-                                    <h5>Marie Horwitz</h5>
-                                    <p>Web Designer</p>
-                                    {/*<i className="far fa-edit mb-5"></i>*/}
-                                    {/* Можно вставить кнопку выхода    */}
+                                    <h5>{toJS(userStore.user.fullname).join(' ')}</h5>
                                 </div>
                                 <div className="col-md-8">
                                     <div className="card-body p-4">
@@ -38,10 +35,6 @@ const ProfileCard = observer(() => {
                                             <div className="col-6 mb-3">
                                                 <h6>Email</h6>
                                                 <p className="text-muted">{userStore.user.email}</p>
-                                            </div>
-                                            <div className="col-6 mb-3">
-                                                <h6>Phone</h6>
-                                                <p className="text-muted">123 456 789</p>
                                             </div>
                                         </div>
                                         <h6>Роли</h6>

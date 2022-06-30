@@ -7,7 +7,6 @@ const Cart = () => {
             <h2>Корзина</h2>
             <div className="row col-12">
                 <div className="col col-md-6 row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-4">
-
                     <div
                         className="card-item m-3 p-2 col-12 card d-flex flex-row gap-3 justify-content-center align-items-center"
                         style={{width: '100%'}}>

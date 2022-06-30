@@ -2,6 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 import {useStore} from "./providers/RootStoreProvider";
 import {observer} from "mobx-react-lite";
+import {toJS} from "mobx";
 
 const Nav = observer(() => {
     const {rootStore: {shopStore, userStore}} = useStore();

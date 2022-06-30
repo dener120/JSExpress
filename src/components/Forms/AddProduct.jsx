@@ -9,6 +9,7 @@ const AddProduct = () => {
     const [createProductForm, setCreateProductForm] = useState({
         name: '',
         description: '',
+        type: '',
         price: 0,
         quantity: 0,
         img: null,
@@ -33,6 +34,10 @@ const AddProduct = () => {
         }
         if(!textReq.test(createProductForm.name)) {
             messages.push('Некорректное имя.');
+            isValid = false;
+        }
+        if(!textReq.test(createProductForm.type)) {
+            messages.push('Некорректное тип.');
             isValid = false;
         }
         if(!textReq.test(createProductForm.description)) {
@@ -102,6 +107,17 @@ const AddProduct = () => {
                                 id="description-product1"
                                 name="description"
                                 value={createProductForm.description}
+                                onChange={(e) => handleChange(e)}
+                            />
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="description-product1" className="form-label">Тип</label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                id="description-product1"
+                                name="type"
+                                value={createProductForm.type}
                                 onChange={(e) => handleChange(e)}
                             />
                         </div>

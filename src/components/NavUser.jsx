@@ -1,7 +1,8 @@
 import React from "react";
 import {useStore} from "./providers/RootStoreProvider";
+import {observer} from "mobx-react-lite";
 
-const NavUser = () => {
+const NavUser = observer(() => {
     const {rootStore: {shopStore, userStore}} = useStore();
 
     return (
@@ -41,6 +42,6 @@ const NavUser = () => {
         </div>
 
     )
-}
+});
 
 export default NavUser;

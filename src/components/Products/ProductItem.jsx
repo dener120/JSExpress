@@ -1,8 +1,11 @@
 import React from "react";
 import {observer} from "mobx-react-lite";
+import {useStore} from "../providers/RootStoreProvider";
 import BASE from '../../config'
 
 const ProductItem = observer((props) => {
+    const {rootStore: {shopStore, userStore}} = useStore();
+
     const {
         id,
         name,
@@ -21,7 +24,7 @@ const ProductItem = observer((props) => {
                  alt=""/>
             <div className="m-2">
                 <h5 className="card-title">{name}</h5>
-                <p className="card-text">35 грамм</p>
+                <p className="card-text">{description}</p>
                 <p className="card-text">{price} ₽</p>
                 <div>
                     <div
@@ -34,8 +37,11 @@ const ProductItem = observer((props) => {
                                     Нет в наличии
                                 </button>
                                 :
-                                <button className="btn btn-primary" >В
-                                    корзину
+                                <button
+                                    className="btn btn-primary"
+                                    onClick={() => userStore.addCart(id)}
+                                >
+                                    В корзину
                                 </button>
                         }
                     </div>

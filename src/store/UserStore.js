@@ -1,9 +1,7 @@
-import {makeObservable, observable, action, runInAction, makeAutoObservable} from "mobx";
+import {makeObservable, observable, action, runInAction} from "mobx";
 import axios from "axios";
-import {toJS} from 'mobx'
 import jwt_decode from "jwt-decode";
 import BASE from '../config'
-import {logDOM} from "@testing-library/react";
 
 class UserStore {
     constructor() {
@@ -11,9 +9,10 @@ class UserStore {
             id: JSON.parse(localStorage.getItem('user'))?.id,
             email: JSON.parse(localStorage.getItem('user'))?.email || '',
             currency: JSON.parse(localStorage.getItem('user'))?.currency || 0,
-            roles: JSON.parse(localStorage.getItem('user'))?.roles || []
+            roles: JSON.parse(localStorage.getItem('user'))?.roles || [],
+            fullname: JSON.parse(localStorage.getItem('user'))?.fullname || []
         }
-        this.cart = [];
+        this.cart = JSON.parse(localStorage.getItem('cart')) || [];
         this.order = [];
         this.createdProducts = [];
         makeObservable(this, {
@@ -38,13 +37,13 @@ class UserStore {
         const [name, surname, patronymic] = fullname.split(' ');
         return axios({
             method: 'post',
-            url: BASE + 'users',
+            url: BASE + 'auth/registration',
             data: {
                 email: email,
                 password: password,
-                name: fullname[0],
-                surname: fullname[1],
-                patronymic: fullname[3],
+                name: name,
+                surname: surname,
+                patronymic: patronymic,
             }
         }).then((res) => {
             return runInAction(() => {
@@ -85,6 +84,7 @@ class UserStore {
                     currency: decodeToke.currency,
                     email: decodeToke.email,
                     roles: this.user.roles,
+                    fullname: [decodeToke.name, decodeToke.patronymic, decodeToke.surname]
                 }));
                 return (res.status);
             });
@@ -100,8 +100,19 @@ class UserStore {
 
     }
 
-    addCart() {
-
+    addCart(id) {
+        if (this.cart.length === 0){
+            this.cart.push({id: id, quantity: 1});
+            localStorage.setItem('cart', JSON.stringify(this.cart));
+            return;
+        }
+        if(this.cart.filter(item => item.id === id).length > 0) {
+            this.cart.map(itme => itme.id === id ? {...itme, quantity:itme.quantity++} : itme);
+            localStorage.setItem('cart', JSON.stringify(this.cart));
+            return;
+        }
+        this.cart = [...this.cart, {id: id, quantity: 1}];
+        localStorage.setItem('cart', JSON.stringify(this.cart));
     }
 
     removeCart() {
@@ -120,7 +131,7 @@ class UserStore {
 
     }
 
-    createProduct({name, price, quantity, img}) {
+    createProduct({name, price, quantity, img, type, description}) {
         return axios({
             method: 'post',
             url: BASE + 'products',
@@ -128,6 +139,8 @@ class UserStore {
                 name: name,
                 price: price,
                 quantity: quantity,
+                description: description,
+                type: type,
                 userId: this.user.id,
                 img: img
             },
@@ -151,8 +164,9 @@ class UserStore {
             },
         }).then((res) => {
             return runInAction(() => {
-                console.log(res);
-                return (res.status);
+                console.log(value)
+                this.user.currency = Number(this.user.currency) + Number(value);
+                localStorage.setItem('user', JSON.stringify({...this.user}));
             });
         });
     }

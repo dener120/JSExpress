@@ -6,8 +6,8 @@ const AuthReg = () => {
     const {rootStore: {shopStore, userStore}} = useStore();
 
     const [authForm, setAuthForm] = useState({
-        email: 'test@mail.com',
-        password: 'qwerty1234',
+        email: 'test1231111@gmail.com',
+        password: 'testDD123test',
         isValid: false,
         error: '',
         success: '',
