@@ -1,6 +1,8 @@
 import {action, makeObservable, observable, runInAction} from "mobx";
 import axios from "axios";
 import {toJS} from 'mobx'
+import BASE from '../config'
+
 
 class ShopStore {
 
@@ -14,8 +16,10 @@ class ShopStore {
     }
 
     loadProducts() {
-        axios.get('mock-up/products.json').then(({data}) => {
+        axios.defaults.headers.get['Access-Control-Allow-Origin'] = '*';
+        axios.get(BASE+'products').then(({data}) => {
             runInAction(() => {
+                console.log(data)
                 this.products = data
             });
         });

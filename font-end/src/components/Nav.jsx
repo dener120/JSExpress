@@ -29,21 +29,24 @@ const Nav = observer(() => {
                     </ul>
                     <ul className="navbar-nav d-flex">
                         <li className="nav-item">
-                            <a
-                                type="button"
-                                className="nav-link"
-                                data-bs-toggle="modal"
-                                data-bs-target="#auth-reg-modal"
-                            >
-                                <i className="bi bi-door-open"/>
-                                Войти
-                            </a>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="user">
-                                Пльзователь
-                                <i className="bi bi-bag"/>
-                            </Link>
+                            {
+                                !userStore.id
+                                    ?
+                                    <a
+                                        type="button"
+                                        className="nav-link"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#auth-reg-modal"
+                                    >
+                                        <i className="bi bi-door-open"/>
+                                        Войти
+                                    </a>
+                                    :
+                                    <Link className="nav-link" to="user">
+                                        <i className="ml-3 bi bi-person"/>
+                                        Пользователь
+                                    </Link>
+                            }
                         </li>
                         <li className="nav-item d-f" data-page="Корзина">
                             <div className="container-fluid d-flex align-items-center">

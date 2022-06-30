@@ -1,8 +1,9 @@
 import React from "react";
+import {useStore} from "./providers/RootStoreProvider";
 
 
 const ProfileCard = () => {
-
+    const {rootStore: {shopStore, userStore}} = useStore();
 
     return (
         <div className="mt-5">
@@ -52,7 +53,11 @@ const ProfileCard = () => {
                                             </div>
                                         </div>
                                         <div className="d-flex justify-content-start">
-                                            <button type="button" className="btn btn-danger">
+                                            <button
+                                                type="button"
+                                                className="btn btn-danger"
+                                                onClick={(e) => userStore.logAuth()}
+                                            >
                                                 Выход
                                                 <i style={{"marginLeft": '5px'}} className="bi bi-box-arrow-in-right"/>
                                             </button>

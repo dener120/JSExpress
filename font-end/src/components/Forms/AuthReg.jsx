@@ -1,14 +1,16 @@
 import React, {useState} from "react";
+import {useStore} from "../providers/RootStoreProvider";
 
 
 const AuthReg = () => {
+    const {rootStore: {shopStore, userStore}} = useStore();
+
     const [authForm, setAuthForm] = useState({
-        email: '',
-        password: '',
+        email: 'test@mail.com',
+        password: 'qwerty1234',
         isValid: false,
         error: '',
     });
-
     const [regForm, setRegForm] = useState({
         fullname: '',
         email: '',
@@ -27,7 +29,7 @@ const AuthReg = () => {
     }
 
     const validAutForm = () => {
-        const passwordReg = new RegExp(/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/);
+        const passwordReg = new RegExp(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/);
         const emailReg = new RegExp(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
         let isValid = true;
         let messages = [];
@@ -86,18 +88,13 @@ const AuthReg = () => {
 
     const handleSubmitAuth = (e) => {
         e.preventDefault();
-        console.log(validAutForm());
         if (!validAutForm()) return;
-        console.log('send')
+        userStore.auth(authForm.email, authForm.password);
     }
 
     const handleSubmitReg = (e) => {
         e.preventDefault();
-        console.log(validRegForm());
-        console.log(regForm)
         if (!validRegForm()) return;
-        console.log('send')
-
     }
 
 
